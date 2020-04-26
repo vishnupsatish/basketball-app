@@ -14,6 +14,8 @@ Includes
 
 Coming soon to Google Play.
 
+Install the first release of the app at https://bit.ly/alley-oop-r3
+
 ## Install
 
 Installation requires the NativeScript CLI.
