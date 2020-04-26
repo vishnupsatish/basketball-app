@@ -1,4 +1,4 @@
-##Alley-oop
+## Alley-oop
 
 A basketball stats and live scores app. Your one-stop for everything basketball. Built using NativeScript.
 
@@ -10,11 +10,11 @@ Includes
 - Player stats
 - Game archive
 
-##Download App
+## Download App
 
 Coming soon to Google Play.
 
-##Install
+## Install
 
 Installation requires the NativeScript CLI.
 
@@ -26,7 +26,7 @@ Installation requires the NativeScript CLI.
 
 4. Do <code>tns run android|ios</code> to run the application.
 
-##Screenshots
+## Screenshots
 
 <img width="30%"  src="https://alleyoop.sirv.com/Screenshots/screenshot4.png">
 
