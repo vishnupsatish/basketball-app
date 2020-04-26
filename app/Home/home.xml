@@ -1,0 +1,65 @@
+<Page
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:Card="@nstudio/nativescript-cardview"
+    xmlns:sd="nativescript-ui-sidedrawer"
+    navigatedTo="onNavigatingTo"
+    loaded="checkConnection"
+    xmlns:customControls="shared"
+    xmlns:PullRefresh="@nstudio/nativescript-pulltorefresh">
+    <ActionBar backgroundColor="#373737" class="actionB">
+        <android>
+
+            <NavigationButton tap="toggleDrawer" icon="res://baseline_menu_white_24"/>
+            <!--<NavigationButton tap="toggleDrawer" icon="font://&#xf0c9;" class="fas"/>-->
+
+        </android>
+        <ActionItem what="refreshbutton" tap="gameRefresh" icon="res://baseline_refresh_white_24"></ActionItem>
+        <ActionItem color="white" where="About" tap="changePage" icon="res://baseline_more_vert_white_24"></ActionItem>
+
+        <Label text="Matches"></Label>
+    </ActionBar>
+    <sd:RadSideDrawer id="sideDrawer">
+        <sd:RadSideDrawer.drawerContent>
+            <customControls:sidedrawer />
+        </sd:RadSideDrawer.drawerContent>
+        <sd:RadSideDrawer.mainContent>
+
+            <!--<StackLayout>
+                <StackLayout orientation="horizontal" style="height: 100%">-->
+                    <!--<ScrollView class="page" left="0" top="0" width="100%" height="100%">-->
+
+                        <!--<StackLayout id="stack">-->
+
+                            <PullRefresh:PullToRefresh id="scroll" style="margin-top: 0.001" what="pullto" refresh="gameRefresh">
+
+                                <ScrollView class="page" left="0" top="0" width="100%" height="100%">
+
+                            <Repeater id="eachAndEvery" items="{{ items }}">
+                                <Repeater.itemTemplate>
+                                   <Card:CardView tap="goToGame" ripple="true" game="{{ gameData }}" marginBottom="10" backgroundColor="{{ colour }}" class="card" elevation="10" radius="50">
+                                        <StackLayout class="card-layout">
+                                            <GridLayout width="100%" columns="*,3*,*" horizontalAlignment="left" verticalAlignment="top">
+                                                <Image src="{{ homeTeam }}" col="0"/>
+                                                <GridLayout col="1" rows="auto" columns="*">
+                                                    <Label id="gameStatus" color="white" row="0" horizontalAlignment="center" class="credits" textWrap="true" text="{{ gameStatus }}"/>
+                                                </GridLayout>
+                                                <Image src="{{ awayTeam }}" col="2"/>
+                                            </GridLayout>
+                                            <GridLayout rows="auto" columns="*">
+                                                <Label fontSize="22" id="teamStatus" color="white" row="0" horizontalAlignment="center" class="credits" textWrap="true" text="{{ teamStatus }}"/>
+                                            </GridLayout>
+                                        </StackLayout>
+                                   </Card:CardView>
+                                </Repeater.itemTemplate>
+                            </Repeater>
+                            </ScrollView>
+                            </PullRefresh:PullToRefresh>
+
+                        <!--</StackLayout>-->
+
+                    <!--</ScrollView>-->
+                <!--</StackLayout>
+            </StackLayout>-->
+        </sd:RadSideDrawer.mainContent>
+    </sd:RadSideDrawer>
+</Page>

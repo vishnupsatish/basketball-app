@@ -1,0 +1,284 @@
+﻿@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/blue.css";
+
+
+
+/*-------------------Home Page CSS--------------------*/
+
+@keyframes example {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.playerCard {
+    animation-name: example;
+    animation-duration: 0.3;
+    animation-timing-function: ease-in;
+   animation-fill-mode: forwards;
+}
+
+
+.card {
+    background-color: white;
+    color: #4d4d4d;
+    margin: 15 15 0;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    /*animation-name: example;
+    animation-duration: 0.3;
+    animation-timing-function: ease-in;
+   animation-fill-mode: forwards;*/
+}
+.card-layout {
+    padding: 20;
+    border-radius: 20px;
+}
+.card-layout .h1 {
+    margin-bottom: 15;
+}
+
+#myLabel {
+    width: 100%;
+    height: 100%;
+}
+
+.fade-in {
+    opacity: 0;
+}
+
+.background {
+    background-image: url("https://cdn.pixabay.com/photo/2016/07/27/01/36/basketball-1544370_1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;;
+  }
+
+  .far {
+    font-family: Font Awesome 5 Free, fa-regular-400;
+    font-weight: 400;
+}
+
+.fab {
+    font-family: Font Awesome 5 Brands, fa-brands-400;
+    font-weight: 400;
+}
+
+.fas {
+    font-family: Font Awesome 5 Free, fa-solid-900;
+    font-weight: 900;
+}
+
+.fap {
+    font-family: Font Awesome 5 Pro, Font Awesome 5 Pro Solid;
+    font-weight: 400;
+}
+
+.mdi {
+    font-family: MaterialIcons, "Material Icons";
+}
+
+.bottom-nav {
+    margin: 0;
+    border-top-color: #ececec;
+    border-top-width: 1;
+    text-align: center;
+}
+
+.bottom-nav-btn {
+    padding-top: 8;
+    padding-bottom: 8;
+    color: #888888;
+    background-color: transparent;
+}
+
+.bottom-nav-btn-active {
+    padding-top: 8;
+    padding-bottom: 8;
+    color:#223e92;
+    background-color: transparent;
+}
+
+.bottom-nav-icon {
+    font-size: 20;
+}
+
+.bottom-nav-text {
+    font-size: 12;
+    text-transform: capitalize;
+}
+
+.page {
+    height: 100%;
+}
+
+.fa-a:before {
+    font-family: Junegull;
+    font-weight: bold;
+    content: 'A';
+}
+
+
+
+.sidedrawer-header {
+    height: 50;
+}
+
+.sidedrawer-header-brand {
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.sidedrawer-list-item-text {
+    padding: 20 0 20 20;
+    border-color: red green black orange;
+    border-width: 0 0 3 0;
+    font-size: 20px;
+
+}
+
+.sideDrawImage {
+    margin-top: 20px;
+}
+
+.first-element {
+    border-color: black black black black;
+    border-width: 3 0 3 0;
+    margin-top: 20px;
+}
+
+.sidedrawer-header {
+    background-color: #387ef5;
+}
+
+.sidedrawer-header-brand {
+    color: #ffffff;
+    margin-top: 23px;
+    margin-left: 23px;
+}
+
+.sidedrawer-content {
+    background-color: #d2dce0;
+
+}
+
+.sidedrawer-list-item {
+    color: #000000;
+    size: 20px;
+
+}
+
+.sidedrawer-list-item.active {
+    background-color: #ffffff;
+}
+
+.sidedrawer-list-item.active {
+    color: #000000;
+}
+
+
+
+
+
+/*-------------------News Page CSS--------------------*/
+
+
+.list-group-item-heading {
+    font-family: "Montserrat-Regular";
+
+    font-size: 16;
+    }
+
+.list-group-item-text {
+    font-size: 14;
+    font-family: "Montserrat-Regular";
+}
+
+
+.list-group, .list-group-item {
+    background-color: #fafeff;
+    border-color: red green black orange;
+    border-width: 0 0 3 0;
+}
+
+.list-img {
+    margin-left: 50px;
+}
+
+/*--------------------About Page CSS-------------------*/
+
+
+
+
+.credits {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-size: 20;
+}
+
+
+/*---------------------Standings Page CSS---------------------*/
+
+#tabViewContainer {
+    selected-tab-text-color: #17408B;
+    android-selected-tab-highlight-color:#17408B;
+    tab-text-color:black;
+}
+
+
+
+/*--------------------Game Page CSS---------------------------*/
+
+
+.ns-dark .tabDark {
+    background-color: #2b2b2b;
+}
+
+/* ----------------------Player Page CSS--------------------*/
+
+.ns-dark .playerSearchBar {
+    border-color:white;
+    border-width:3;
+}
+
+
+.ns-light .playerSearchBar {
+    border-color:black;
+    border-width:3;
+}
+
+.item-name {
+    color: #303c47;
+    font-family: 'Open Sans', 'OpenSans-Bold';
+    font-weight: bold;
+    padding: 2;
+}
+
+.item-desc {
+    color: #303c47;
+    font-family: 'Open Sans', 'OpenSans-Regular';
+    padding: 2;
+}
+
+.bolded {
+    font-weight: 900;
+}
+
+.ns-dark .standingsList {
+    background-color: #343434;
+}
+
+.actionB {
+    background-color: #373737;
+}
+
+
+
+
+
+
+
+
+
+

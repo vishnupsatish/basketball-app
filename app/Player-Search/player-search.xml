@@ -1,0 +1,42 @@
+<Page
+    loaded="getPlayers"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:sd="nativescript-ui-sidedrawer"
+    xmlns:customControls="shared"
+    xmlns:lv="nativescript-ui-listview"
+    xmlns:picker="nativescript-picker"
+    xmlns:ui="nativescript-filterable-listpicker"
+    xmlns:RL="nativescript-ripple"
+	xmlns:mdr="nativescript-material-ripple"
+	navigatedTo="checkConnection"
+	xmlns:RL="nativescript-ripple">
+    <ActionBar backgroundColor="#373737" class="actionB">
+        <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="goBack"/>
+
+        <Label text="Player Search"></Label>
+    </ActionBar>
+
+    <GridLayout rows="*">
+
+		<lv:RadListView height="100%" id="listview" row="0" marginRight="-2" backgroundColor="#e6e6e6" itemLoading="{{ onItemLoading }}">
+			<lv:RadListView.listViewLayout borderRadius="10">
+				<lv:ListViewStaggeredLayout scrollDirection="Vertical" spanCount="2" />
+			</lv:RadListView.listViewLayout>
+			<lv:RadListView.itemTemplate >
+				<StackLayout tap="specificPlayer" player="{{ idAndName }}" class="playerCard" margin="10" borderRadius="10">
+					<!--<StackLayout marginBottom="-10" width="200" height="120" backgroundColor="{{ imgColour }}" borderRadius="10 10 0 0">-->
+						<Image marginBottom="-10" width="200" height="120" backgroundColor="{{ imgColour }}" borderRadius="10 10 0 0" src="{{ teamImage }}" stretch="aspectFill" />
+					<!--</StackLayout>-->
+					<StackLayout borderRadius="0 0 10 10" backgroundColor="{{ backColour }}" padding="10">
+						<Label color="white" text="{{ playerName }}" class="item-name" textWrap="true" />
+						<Label color="white" text="{{ playerTeam }}" class="item-desc" textWrap="true" />
+					</StackLayout>
+				</StackLayout>
+			</lv:RadListView.itemTemplate>
+		</lv:RadListView>
+	</GridLayout>
+
+
+
+
+    </Page>

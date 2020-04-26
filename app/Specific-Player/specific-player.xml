@@ -1,0 +1,152 @@
+<Page
+        xmlns:lv="nativescript-ui-listview"
+        xmlns:nativescript-image="nativescript-image"
+        xmlns="http://schemas.nativescript.org/tns.xsd"
+        loaded="getPlayerData"
+        navigatedTo="checkConnection"
+        navigatedFrom="leavingPage">
+    <ActionBar backgroundColor="#373737" class="actionB">
+        <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="goBack"/>
+        <Label text="Player"></Label>
+    </ActionBar>
+    <StackLayout>
+        <GridLayout id="topPage" backgroundColor="{{ teamColour }}" height="20%" width="100%" columns="2*,2*">
+            <!--<Image src="{{ playerImage }}"
+                   col="0"/>-->
+            <nativescript-image:Img id="specificPlayerImage" col="0" failureImageUri="~/images/user.png" src="{{ playerImage }}"/>
+
+            <StackLayout verticalAlignment="center" col="1">
+                <Label color="white" row="0" horizontalAlignment="center" class="credits" textWrap="true"
+                       text="{{ playerName }}"/>
+                <Label fontSize="10" color="white" row="1" horizontalAlignment="center" class="credits" textWrap="true"
+                       text="{{ playerTeam }}"/>
+            </StackLayout>
+
+        </GridLayout>
+
+        <Tabs id="playerStatVis" visibility="collapse">
+            <TabStrip>
+                <TabStripItem>
+                    <Label text="Average"></Label>
+                </TabStripItem>
+                <TabStripItem>
+                    <Label text="Total"></Label>
+                </TabStripItem>
+
+            </TabStrip>
+
+
+            <TabContentItem>
+                <StackLayout>
+                    <ScrollView orientation="horizontal">
+
+                    <lv:RadListView margin="5" borderTopColor="black" id="averageStats"
+                                    class="list-group tabDark">
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate class="tabDark" visibility="visible">
+                            <GridLayout borderWidth="2" borderColor="black" paddingBottom="0px" paddingTop="0px"
+                                        class="tabDark list-group-item" rows="auto"
+                                        columns="65, 60, 50, 60, 60, 50, 68">
+
+                                <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px" paddingTop="20px"
+                                       row="0" col="0"
+                                       text="{{ yr }}" class="list-group-item-heading"/>
+
+                                <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px" paddingTop="20px"
+                                       row="0" col="1"
+                                       text="{{ tm }}" class="list-group-item-heading"/>
+
+                                <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px" paddingTop="20px"
+                                       row="0" col="2"
+                                       text="{{ games }}" class="list-group-item-heading"/>
+
+                                <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px" paddingTop="20px"
+                                       row="0" col="3"
+                                       text="{{ fgs }}" class="list-group-item-heading"/>
+
+                                <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px" paddingTop="20px"
+                                       row="0" col="4"
+                                       text="{{ threep }}" class="list-group-item-heading"/>
+
+
+                                <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px" paddingTop="20px"
+                                       row="0" col="5"
+                                       text="{{ apg }}" class="list-group-item-heading"/>
+
+                                <Label style="{{ bolded }}" row="0" col="6" text="{{ ppg }}"
+                                       class="list-group-item-heading"/>
+                            </GridLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>
+                    </ScrollView>
+                </StackLayout>
+            </TabContentItem>
+
+            <TabContentItem>
+                <StackLayout>
+                    <ScrollView orientation="horizontal">
+                        <StackLayout>
+
+                            <lv:RadListView margin="5" borderTopColor="black" id="totalStats"
+                                            class="list-group tabDark">
+                                <lv:RadListView.listViewLayout>
+                                    <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                                </lv:RadListView.listViewLayout>
+                                <lv:RadListView.itemTemplate class="tabDark" visibility="visible">
+                                    <GridLayout borderWidth="2" borderColor="black" paddingBottom="0px" paddingTop="0px"
+                                                class="tabDark list-group-item" rows="auto"
+                                                columns="65, 60, 50, 90, 90, 65, 60, 80">
+                                        <!--cols was 4*,4*,3*,6*,6*,4*-->
+                                        <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px"
+                                               paddingTop="20px"
+                                               row="0" col="0"
+                                               text="{{ yr }}" class="list-group-item-heading"/>
+
+                                        <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px"
+                                               paddingTop="20px"
+                                               row="0" col="1"
+                                               text="{{ tm }}" class="list-group-item-heading"/>
+
+                                        <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px"
+                                               paddingTop="20px"
+                                               row="0" col="2"
+                                               text="{{ games }}" class="list-group-item-heading"/>
+
+
+                                        <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px"
+                                               paddingTop="20px"
+                                               row="0" col="3"
+                                               text="{{ fgs }}" class="list-group-item-heading"/>
+
+                                        <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px"
+                                               paddingTop="20px"
+                                               row="0" col="4"
+                                               text="{{ threep }}" class="list-group-item-heading"/>
+
+                                        <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px" paddingTop="20px"
+                                               row="0" col="5"
+                                               text="{{ plus }}" class="list-group-item-heading"/>
+
+                                        <Label style="{{ bolded }}" borderRightWidth="2" paddingBottom="20px"
+                                               paddingTop="20px"
+                                               row="0" col="6"
+                                               text="{{ asis }}" class="list-group-item-heading"/>
+
+                                        <Label style="{{ bolded }}" row="0" col="7" text="{{ ppg }}"
+                                               class="list-group-item-heading"/>
+
+
+                                    </GridLayout>
+                                </lv:RadListView.itemTemplate>
+                            </lv:RadListView>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </TabContentItem>
+        </Tabs>
+
+
+    </StackLayout>
+</Page>

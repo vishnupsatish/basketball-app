@@ -1,0 +1,162 @@
+<Page
+        xmlns:Card="@nstudio/nativescript-cardview"
+        xmlns:lv="nativescript-ui-listview"
+        xmlns:chart="nativescript-ui-chart"
+        xmlns:ui="nativescript-youtubeplayer"
+        xmlns:nativescript-image="nativescript-image"
+        xmlns="http://schemas.nativescript.org/tns.xsd"
+        loaded="showGame"
+        navigatedTo="checkConnection">
+    <ActionBar backgroundColor="#373737" class="actionB">
+        <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="goBack"/>
+        <Label text="Game"></Label>
+    </ActionBar>
+    <StackLayout>
+        <GridLayout id="topPage" backgroundColor="{{ homeColour }}" height="20%" width="100%" columns="2*,2*,2*,2*,2*">
+            <Image tap="specificTeam" teamId="{{ homeId }}" width="65vw" src="{{ homeTeam }}" col="0"/>
+            <Label color="white" col="1" verticalAlignment="middle" horizontalAlignment="center" class="credits"
+                   textWrap="true" text="{{ homeScore }}"/>
+            <GridLayout verticalAlignment="middle" col="2" rows="auto,auto" columns="*">
+                <Label color="white" row="0" horizontalAlignment="center" class="credits" textWrap="true"
+                       text="{{ gameState }}"/>
+                <Label fontSize="10" color="white" row="1" horizontalAlignment="center" class="credits" textWrap="true"
+                       text="{{ stadium }}"/>
+            </GridLayout>
+            <Label verticalAlignment="middle" color="white" col="3" horizontalAlignment="center" class="credits"
+                   textWrap="true" text="{{ awayScore }}"/>
+            <Image tap="specificTeam" teamId="{{ awayId }}" width="65vw" src="{{ awayTeam }}" col="4"/>
+        </GridLayout>
+        <Tabs visibility="visible">
+            <TabStrip>
+                <TabStripItem>
+                    <Label text="Stats"></Label>
+                </TabStripItem>
+                <TabStripItem>
+                    <Label text="{{ homeName }}"></Label>
+                </TabStripItem>
+                <TabStripItem>
+                    <Label text="{{ awayName }}"></Label>
+                </TabStripItem>
+
+            </TabStrip>
+
+            <TabContentItem title="Stats">
+                <StackLayout>
+                    <Label visibility="{{ showLabel }}" text="{{ gameState }}" textWrap="true" class="credits"/>
+                    <lv:RadListView height="100%" id="allStats" class="list-group tabDark">
+                        <lv:RadListView.itemTemplate class="tabDark">
+                            <GridLayout columns="auto, *, auto">
+                                <Label marginLeft="15" class="credits" text="{{ homeValue }}" col="0"
+                                       horizontalAlignment="left"></Label>
+                                <Label class="credits" text="{{ stat }}" col="1" horizontalAlignment="center"></Label>
+                                <Label marginRight="15" class="credits" text="{{ awayValue }}" col="2"
+                                       horizontalAlignment="right"></Label>
+                            </GridLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>
+                </StackLayout>
+
+            </TabContentItem>
+
+            <TabContentItem title="{{ homeName }}">
+                <StackLayout>
+                    <Label visibility="{{ showLabel }}" text="{{ gameState }}" textWrap="true" class="credits"/>
+                    <lv:RadListView height="100%" id="homeStats" class="list-group tabDark">
+                        <lv:RadListView.itemTemplate class="tabDark" visibility="{{ listShown }}">
+                            <GridLayout tap="{{ openPlayer }}" name="{{ fullName }}" player="{{ id }}"
+                                        paddingBottom="20px" paddingTop="20px" class="tabDark list-group-item"
+                                        rows="auto" columns="5*,auto,13*,4*,4*,4*,4*">
+                                <Label marginLeft="10" row="0" col="0" text="{{ pos }}"
+                                       class="list-group-item-heading"/>
+                                <nativescript-image:Img failureImageUri="~/images/user.png" stretch="centerCrop"
+                                                        height="auto" row="0" col="1" class="thumb img-rounded"
+                                                        src="{{ img }}"/>
+                                <!--<Image height="auto"  row="0" col="1" src="{{ img }}" class="thumb img-rounded" />-->
+                                <Label row="0" col="2" text="{{ name }}" class="list-group-item-heading"/>
+                                <Label row="0" col="3" text="{{ min }}" class="list-group-item-heading"/>
+                                <Label row="0" col="4" text="{{ pts }}" class="list-group-item-heading"/>
+                                <Label row="0" col="5" text="{{ ast }}" class="list-group-item-heading"/>
+                                <Label row="0" col="6" text="{{ reb }}" class="list-group-item-heading"/>
+                            </GridLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>
+                </StackLayout>
+            </TabContentItem>
+
+
+            <TabContentItem>
+                <StackLayout>
+                    <Label visibility="{{ showLabel }}" text="{{ gameState }}" textWrap="true" class="credits"/>
+                    <lv:RadListView height="100%" id="awayStats" class="list-group tabDark">
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate class="tabDark" visibility="{{ listShown }}">
+                            <GridLayout tap="{{ openPlayer }}" name="{{ fullName }}" player="{{ id }}"
+                                        paddingBottom="20px" paddingTop="20px" class="list-group-item tabDark"
+                                        rows="auto" columns="5*,auto,13*,4*,4*,4*,4*">
+                                <Label marginLeft="10" row="0" col="0" text="{{ pos }}"
+                                       class="list-group-item-heading"/>
+                                <nativescript-image:Img failureImageUri="~/images/user.png" stretch="centerCrop"
+                                                        height="auto" row="0" col="1" class="thumb img-rounded"
+                                                        src="{{ img }}"/>
+                                <Label row="0" col="2" text="{{ name }}" class="list-group-item-heading"/>
+                                <Label row="0" col="3" text="{{ min }}" class="list-group-item-heading"/>
+                                <Label row="0" col="4" text="{{ pts }}" class="list-group-item-heading"/>
+                                <Label row="0" col="5" text="{{ ast }}" class="list-group-item-heading"/>
+                                <Label row="0" col="6" text="{{ reb }}" class="list-group-item-heading"/>
+                            </GridLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>
+                </StackLayout>
+            </TabContentItem>
+        </Tabs>
+        <!--<TabView id="tabViewContainer">
+
+        <TabViewItem title="{{ homeName }}">
+                <StackLayout>
+                    <Label visibility="{{ showLabel }}" text="{{ gameState }}" textWrap="true" class="credits"/>
+                    <lv:RadListView height="100%" id="homeStats" class="list-group tabDark">
+                    <lv:RadListView.listViewLayout>
+                        <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                    </lv:RadListView.listViewLayout>
+                    <lv:RadListView.itemTemplate class="tabDark" visibility="{{ listShown }}">
+                        <GridLayout tap="{{ openPlayer }}" name="{{ fullName }}" player="{{ id }}" paddingBottom="20px" paddingTop="20px" class="tabDark list-group-item" rows="auto" columns="5*,auto,13*,4*,4*,4*,4*">
+                            <Label marginLeft="10" row="0" col="0" text="{{ pos }}" class="list-group-item-heading" />
+                            <Image height="auto"  row="0" col="1" src="{{ img }}" class="thumb img-rounded" />
+                            <Label row="0" col="2" text="{{ name }}" class="list-group-item-heading" />
+                            <Label row="0" col="3" text="{{ min }}" class="list-group-item-heading" />
+                            <Label row="0" col="4" text="{{ pts }}" class="list-group-item-heading" />
+                            <Label row="0" col="5" text="{{ ast }}" class="list-group-item-heading" />
+                            <Label row="0" col="6" text="{{ reb }}" class="list-group-item-heading" />
+                        </GridLayout>
+                    </lv:RadListView.itemTemplate>
+                </lv:RadListView>
+                </StackLayout>
+            </TabViewItem>
+
+
+        <TabViewItem title="{{ awayName }}">
+                <StackLayout>
+                    <Label visibility="{{ showLabel }}" text="{{ gameState }}" textWrap="true" class="credits"/>
+                    <lv:RadListView height="100%" id="awayStats" class="list-group tabDark">
+                    <lv:RadListView.listViewLayout>
+                        <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                    </lv:RadListView.listViewLayout>
+                    <lv:RadListView.itemTemplate class="tabDark" visibility="{{ listShown }}">
+                        <GridLayout tap="{{ openPlayer }}" name="{{ fullName }}" player="{{ id }}" paddingBottom="20px" paddingTop="20px" class="list-group-item tabDark" rows="auto" columns="5*,auto,13*,4*,4*,4*,4*">
+                            <Label marginLeft="10" row="0" col="0" text="{{ pos }}" class="list-group-item-heading" />
+                            <Image height="auto"  row="0" col="1" src="{{ img }}" class="thumb img-rounded" />
+                            <Label row="0" col="2" text="{{ name }}" class="list-group-item-heading" />
+                            <Label row="0" col="3" text="{{ min }}" class="list-group-item-heading" />
+                            <Label row="0" col="4" text="{{ pts }}" class="list-group-item-heading" />
+                            <Label row="0" col="5" text="{{ ast }}" class="list-group-item-heading" />
+                            <Label row="0" col="6" text="{{ reb }}" class="list-group-item-heading" />
+                        </GridLayout>
+                    </lv:RadListView.itemTemplate>
+                </lv:RadListView>
+                </StackLayout>
+            </TabViewItem>
+        </TabView>-->
+    </StackLayout>
+</Page>

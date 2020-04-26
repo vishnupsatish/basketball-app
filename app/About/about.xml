@@ -1,0 +1,48 @@
+<Page
+        xmlns:Card="@nstudio/nativescript-cardview"
+        xmlns:sd="nativescript-ui-sidedrawer"
+        xmlns:customControls="shared"
+        xmlns:lv="nativescript-ui-listview"
+        xmlns="http://schemas.nativescript.org/tns.xsd"
+        navigatedTo="aboutLoaded"
+        class="centreAlign">
+    <ActionBar backgroundColor="#373737" class="actionB">
+        <android>
+            <NavigationButton tap="toggleDrawer" icon="res://baseline_menu_white_24"/>
+            <!--<NavigationButton tap="toggleDrawer" icon="font://&#xf0c9;" class="fas"/>-->
+        </android>
+        <Label text="About"></Label>
+    </ActionBar>
+    <!--<ActionBar>
+        <android>
+            <NavigationButton tap="toggleDrawer" icon="res://baseline_menu_black_24"/>
+
+        </android>
+        <ios>
+            <ActionItem tap="toggleDrawer" text="Menu" class="fas" icon="font://&#xf0c9;" ios.position="left"/>
+        </ios>
+        <Label text="About"></Label>
+    </ActionBar>-->
+    <sd:RadSideDrawer id="sideDrawer">
+        <!-- side drawer content -->
+        <sd:RadSideDrawer.drawerContent>
+            <customControls:sidedrawer/>
+        </sd:RadSideDrawer.drawerContent>
+        <!-- The main content -->
+        <sd:RadSideDrawer.mainContent>
+            <StackLayout>
+                <Label color="black" row="0" horizontalAlignment="center" textWrap="true" class="credits"
+                       text="&#xA;Developed by Vishnu&#xA;&#xA;&#xA;&#xA;Attributions&#xA;"/>
+                <Label marginBottom="5" color="#0e256d" textDecoration="underline" tap="goToUrl" url="https://iconscout.com/icon/server-1439347" fontSize="14" class="credits" text="Server Icon by Unicons Font"></Label>
+                <Label marginBottom="5" color="#0e256d" textDecoration="underline" tap="goToUrl" url="https://iconscout.com/icon/time-382" fontSize="14" class="credits" text="Time Icon by Vaadin Icons"></Label>
+                <Label marginBottom="5" color="#0e256d" textDecoration="underline" tap="goToUrl" url="https://iconscout.com/icon/team-167" fontSize="14" class="credits" text="Team Icon by Benjamin J Sperry"></Label>
+                <Label marginBottom="5" color="#0e256d" textDecoration="underline" tap="goToUrl" url="https://iconscout.com/icon/person-1780868" fontSize="14" class="credits" text="Person Icon by Google Inc."></Label>
+                <Label marginBottom="5" color="#0e256d" textDecoration="underline" tap="goToUrl" url="https://iconscout.com/icon/basketball-1785121" fontSize="14" class="credits" text="BasketBall Icon by Kawalan Icon"></Label>
+                <Label marginBottom="5" color="#0e256d" textDecoration="underline" tap="goToUrl" url="https://iconscout.com/icon/user-1482" fontSize="14" class="credits" text="User Icon by Benjamin J Sperry"></Label>
+                <Label marginBottom="5" color="#0e256d" textDecoration="underline" tap="goToUrl" url="https://iconscout.com/icon/news-1403483" fontSize="14" class="credits" text="News Icon by Vector Stall"></Label>
+                <Label marginBottom="5" color="#0e256d" textDecoration="underline" tap="goToUrl" url="https://developer.nytimes.com" fontSize="14" class="credits" text="News from the New York Times API"></Label>
+
+            </StackLayout>
+        </sd:RadSideDrawer.mainContent>
+    </sd:RadSideDrawer>
+</Page>

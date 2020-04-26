@@ -1,0 +1,11 @@
+<Page navigatedTo="getWebview"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+loaded="checkConnection">
+    <ActionBar backgroundColor="#373737" class="actionB">
+        <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" tap="goBack"/>
+        <Label text="News"></Label>
+    </ActionBar>
+    <StackLayout>
+        <WebView row="1" loaded="onWebViewLoaded" id="newsWebview" src="{{ webViewSrc }}" />
+    </StackLayout>
+</Page>

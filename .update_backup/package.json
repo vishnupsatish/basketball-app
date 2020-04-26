@@ -1,0 +1,28 @@
+{
+  "nativescript": {
+    "id": "org.vishnu.basketball",
+    "tns-android": {
+      "version": "6.3.1"
+    }
+  },
+  "description": "A simple way to view basketball scores and stats.",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "repository": "<fill-your-repository-here>",
+  "dependencies": {
+    "@nativescript/theme": "~2.2.1",
+    "@nstudio/nativescript-cardview": "^1.0.0",
+    "nativescript-getters": "^0.2.0",
+    "nativescript-modal-datetimepicker": "^1.2.2",
+    "nativescript-pulltorefresh": "^2.3.0",
+    "nativescript-ui-chart": "^7.1.1",
+    "nativescript-ui-listview": "^8.0.1",
+    "nativescript-ui-sidedrawer": "^8.0.0",
+    "tns-core-modules": "^6.3.2",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "nativescript-dev-webpack": "~1.4.0"
+  },
+  "gitHead": "fa98f785df3fba482e5e2a0c76f4be1fa6dc7a14",
+  "readme": "A simple way to view basketball scores and stats."
+}

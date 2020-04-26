@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "921116174748",
+    "firebase_url": "https://alley-oop-e4053.firebaseio.com",
+    "project_id": "alley-oop-e4053",
+    "storage_bucket": "alley-oop-e4053.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921116174748:android:60ad0df64560398ac24059",
+        "android_client_info": {
+          "package_name": "com.vishnu.basketball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921116174748-tcrund384rokd3jsulrl15od96oh741q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQr554f_5Y2adXgPk4yqSii1nB3PB9fdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921116174748-tcrund384rokd3jsulrl15od96oh741q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
