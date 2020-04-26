@@ -1,0 +1,76 @@
+<StackLayout class="sidedrawer-left">
+    <!--<StackLayout class="sidedrawer-header">
+        <Label text="Menu" class="sidedrawer-header-brand" />
+
+    </StackLayout>-->
+    <StackLayout class="sidedrawer-content">
+    <Image class="sideDrawImage" width="50%" src="~/images/ALLEY-OOP.png"/>
+        <Label where="Home" tap="changePage" textWrap="true" class="first-element sidedrawer-list-item-text">
+            <Label.formattedText>
+                <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="A   " style="font-family: Alley-oop 2"/>
+                        <Span text="Matches"/>
+                    </FormattedString.spans>
+                </FormattedString>
+            </Label.formattedText>
+        </Label>
+        <Label where="News" tap="changePage" textWrap="true" class="sidedrawer-list-item-text">
+            <Label.formattedText>
+                <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="E   " style="font-family: Alley-oop 2"/>
+                        <Span text="News"/>
+					</FormattedString.spans>
+                </FormattedString>
+            </Label.formattedText>
+        </Label>
+        <Label where="Teams" tap="changePage" textWrap="true" class="sidedrawer-list-item-text">
+            <Label.formattedText>
+                <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="C   " style="font-family: Alley-oop 2"/>
+                        <Span text="Teams"/>
+                    </FormattedString.spans>
+                </FormattedString>
+            </Label.formattedText>
+        </Label>
+        <Label where="Players" tap="changePage" textWrap="true" class="sidedrawer-list-item-text">
+            <Label.formattedText>
+                <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="B   " style="font-family: Alley-oop 2"/>
+                        <Span text="Players"/>
+                    </FormattedString.spans>
+                </FormattedString>
+            </Label.formattedText>
+        </Label>
+        <Label where="Standings" tap="changePage" textWrap="true" class="sidedrawer-list-item-text">
+            <Label.formattedText>
+                <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="F   " style="font-family: Alley-oop 2"/>
+                        <Span text="Standings"/>
+                    </FormattedString.spans>
+                </FormattedString>
+            </Label.formattedText>
+        </Label>
+        <Label where="Archive" tap="changePage" textWrap="true" class="sidedrawer-list-item-text">
+            <Label.formattedText>
+                <FormattedString>
+                    <FormattedString.spans>
+                        <Span text="D   " style="font-family: Alley-oop 2"/>
+                        <Span text="Archive"/>
+                    </FormattedString.spans>
+                </FormattedString>
+            </Label.formattedText>
+        </Label>
+        <!--<Label where="Home" tap="changePage" text="Matches" class="sidedrawer-list-item-text" />-->
+        <!--<Label where="News" tap="changePage" text="News" class="sidedrawer-list-item-text" />
+        <Label where="Teams" tap="changePage" text="Teams" class="sidedrawer-list-item-text" />
+        <Label where="Players" tap="changePage" text="Players" class="sidedrawer-list-item-text" />
+        <Label where="Standings" tap="changePage" text="Standings" class="sidedrawer-list-item-text" />
+        <Label where="Archive" tap="changePage" text="Archive" class="sidedrawer-list-item-text" />-->
+
+    </StackLayout>
+</StackLayout>

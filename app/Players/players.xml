@@ -1,0 +1,51 @@
+<Page
+    navigatedTo="checkConnection"
+    loaded="configListPick"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:sd="nativescript-ui-sidedrawer"
+    xmlns:customControls="shared"
+    navigatedFrom="leftPage"
+    xmlns:ui="nativescript-filterable-listpicker">
+    <ActionBar backgroundColor="#373737" class="actionB">
+        <android>
+
+            <NavigationButton tap="toggleDrawer" icon="res://baseline_menu_white_24"/>
+            <!--<NavigationButton tap="toggleDrawer" icon="font://&#xf0c9;" class="fas"/>-->
+
+        </android>
+        <ActionItem color="white" where="About" tap="changePage" icon="res://baseline_more_vert_white_24"></ActionItem>
+        <Label text="Players"></Label>
+    </ActionBar>
+    <!--<ActionBar>
+        <android>
+            <NavigationButton tap="toggleDrawer" icon="res://baseline_menu_black_24"/>
+        </android>
+        <ios>
+            <ActionItem tap="toggleDrawer" text="Menu" class="fas" icon="font://&#xf0c9;" ios.position="left"/>
+        </ios>
+        <ActionItem where="About" tap="changePage" ios.systemIcon="10" ios.position="right" android.position="popup" text="About"></ActionItem>
+        <Label text="Players"></Label>
+    </ActionBar>-->
+    <sd:RadSideDrawer id="sideDrawer">
+        <!-- side drawer content -->
+        <sd:RadSideDrawer.drawerContent>
+            <customControls:sidedrawer />
+        </sd:RadSideDrawer.drawerContent>
+        <!-- The main content -->
+        <sd:RadSideDrawer.mainContent>
+            <StackLayout>
+                <Button color="white" id="teamFilterButton" backgroundColor="#C9082A" tap="openTeamPicker" text="Filter by team... (optional)"/>
+                <Button color="white" id="yearFilterButton" backgroundColor="#17408B" tap="openYearPicker" text="Filter by year... (optional)"/>
+                <ui:FilterableListpicker itemTapped="teamSelected" dimmerColor="rgba(0,0,0,255)" focusOnShow="false" id="teamFilter" hintText="Search team..." />
+                <!--<ui:FilterableListpicker itemTapped="yearSelected" dimmerColor="rgba(0,0,0,255)" focusOnShow="false" id="yearFilter" hintText="Search year..." />-->
+                <!--<ListPicker id="whichYears" class="picker"/>-->
+                    <Image marginBottom="20" marginTop="20" width="50%" src="~/images/ALLEY-OOP.png"/>
+
+                <TextField id="playerBar" returnPress="goToPlayerSearch" hint="Search for a player..." class="-rounded m-t-10 playerSearchBar" />
+                    <Button tap="goToPlayerSearch" color="white" width="50%" height="80" backgroundColor="#C9082A" text="Search"/>
+
+                <!--<lv:RadListView height="100%" id="listview" class="list-group"><lv:RadListView.listViewLayout><lv:ListViewLinearLayout scrollDirection="Vertical"/></lv:RadListView.listViewLayout><lv:RadListView.itemTemplate><GridLayout class="list-group-item" rows="auto" columns="auto, *"><Image tap="openPlayer" url="{{ playerFull }}" height="70" width="70" row="0" col="0" src="{{ teamImage }}" class="thumb list-img" /><StackLayout row="0" col="1" tap="openPlayer" url="{{ playerFull }}" ><Label textWrap="true" text="{{ playerName }}" class="list-group-item-heading" /><Label text="{{ playerTeam }}" class="list-group-item-text" /></StackLayout></GridLayout></lv:RadListView.itemTemplate></lv:RadListView>-->
+            </StackLayout>
+        </sd:RadSideDrawer.mainContent>
+    </sd:RadSideDrawer>
+</Page>

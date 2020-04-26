@@ -1,0 +1,8 @@
+<GridLayout rows="auto" columns="*,*,*,*,*" class="toolbar">
+    <Image col="0" src="{{ '~/icon/home'+ ( toolbarSelected != 0 ? '.png' : '_selected.png') }}"
+        tap="onHomeTap" />
+    <Image col="1" src="{{ '~/icon/ball'+ ( toolbarSelected != 1 ? '.png' : '_selected.png') }}" />
+    <Image col="2" src="{{ '~/icon/list'+ ( toolbarSelected != 2 ? '.png' : '_selected.png') }}" />
+    <Image col="3" src="{{ '~/icon/star'+ ( toolbarSelected != 3 ? '.png' : '_selected.png') }}" />
+    <Image col="4" src="{{ '~/icon/gear'+ ( toolbarSelected != 4 ? '.png' : '_selected.png') }}" />
+</GridLayout>

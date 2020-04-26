@@ -1,0 +1,62 @@
+<Page
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:Card="@nstudio/nativescript-cardview"
+    xmlns:sd="nativescript-ui-sidedrawer"
+    navigatedTo="checkConnection"
+    xmlns:customControls="shared"
+    loaded="pageLoaded">
+    <ActionBar backgroundColor="#373737" class="actionB">
+        <android>
+
+            <NavigationButton tap="toggleDrawer" icon="res://baseline_menu_white_24"/>
+            <!--<NavigationButton tap="toggleDrawer" icon="font://&#xf0c9;" class="fas"/>-->
+
+        </android>
+        <ActionItem color="white" where="About" tap="changePage" icon="res://baseline_more_vert_white_24"></ActionItem>
+        <Label text="News"></Label>
+    </ActionBar>
+    <!--<ActionBar>
+        <android>
+            <NavigationButton tap="toggleDrawer" icon="res://baseline_menu_black_24"/>
+        </android>
+        <ios>
+            <ActionItem tap="toggleDrawer" text="Menu" class="fas" icon="font://&#xf0c9;" ios.position="left"/>
+        </ios>
+        <ActionItem where="About" tap="changePage" ios.systemIcon="10" ios.position="right" android.position="popup" text="About"></ActionItem>
+        <Label text="News"></Label>
+    </ActionBar>-->
+    <sd:RadSideDrawer id="sideDrawer">
+        <!-- side drawer content -->
+        <sd:RadSideDrawer.drawerContent>
+            <customControls:sidedrawer />
+        </sd:RadSideDrawer.drawerContent>
+        <!-- The main content -->
+        <sd:RadSideDrawer.mainContent>
+            <ScrollView class="page" left="0" top="0" width="100%" height="100%">
+                <StackLayout id="stack">
+
+                    <Repeater items="{{ items }}">
+                        <Repeater.itemTemplate>
+                            <Card:CardView ripple="true" url="{{ url }}" tap="goToNews" marginBottom="10" id="cardview" class="card" elevation="40" radius="50" ios:shadowRadius="3">
+                                <StackLayout class="card-layout">
+                                <GridLayout columns="3*,*" width="100%" height="100%">
+                                    <StackLayout col="0">
+                                    <Label marginRight="10" textWrap="true" text="{{ newsTitle }}" color="black" class="credits"/>
+                                        <Label marginRight="10" textWrap="true" text="{{ newsDesc }}" fontSize="12" color="black" class="credits"/>
+                                    </StackLayout>
+
+                                    <GridLayout rows="auto,auto" height="100%" col="1">
+                                            <Image row="0" width="100%" verticalAlignment="top" borderRadius="6" marginTop="0" stretch="aspectFit" src="{{ image }}"/>
+                                            <Label row="1" height="100%" verticalAlignment="bottom" marginRight="10" textWrap="true" text="{{ author }}" fontSize="12" color="black" class="credits"/>
+                                    </GridLayout>
+                                </GridLayout>
+                                </StackLayout>
+                            </Card:CardView>
+                        </Repeater.itemTemplate>
+                    </Repeater>
+                    <Image tap="goToAttr" width="50%" id="nyAttri" visibility="collapse" src="https://developer.nytimes.com/files/poweredby_nytimes_200a.png?v=1568441068443"></Image>
+                </StackLayout>
+            </ScrollView>
+        </sd:RadSideDrawer.mainContent>
+    </sd:RadSideDrawer>
+</Page>
