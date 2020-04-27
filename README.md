@@ -1,4 +1,4 @@
-## Alley-oop
+# Alley-oop
 
 A basketball stats and live scores app. Your one-stop for everything basketball. Built using NativeScript.
 
