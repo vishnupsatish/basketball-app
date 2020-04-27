@@ -6,6 +6,7 @@ platforms/
 # NativeScript Template
 *.js.map
 applab.jks
+app/News/config.js
 
 # Logs
 logs
