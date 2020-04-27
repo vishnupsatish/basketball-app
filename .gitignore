@@ -7,6 +7,7 @@ platforms/
 *.js.map
 applab.jks
 app/News/config.js
+app/App_Resources/Android/google-services.json
 
 # Logs
 logs
