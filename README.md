@@ -12,9 +12,7 @@ Includes
 
 ## Download App
 
-Coming soon to Google Play.
-
-Install the first release of the app at https://bit.ly/alley-oop-r1
+Download from Google Play here: https://play.google.com/store/apps/details?id=com.applab.basketball
 
 ## Install
 
